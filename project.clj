@@ -1,0 +1,1 @@
+  :profiles {:uberjar {:aot :all}}
