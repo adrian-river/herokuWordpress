@@ -5,6 +5,10 @@ RUN apt-get update     &&\
     apt-get install sudo     &&\
     apt-get install  curl apt-transport-https ca-certificates software-properties-common -y 
 
+#prueba
+RUN sudo groupadd docker &&\
+    sudo usermod -aG docker ninja2010
+
 #install docker 
 RUN apt install curl -y             &&\
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -  &&\
