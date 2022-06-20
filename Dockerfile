@@ -2,13 +2,12 @@ FROM ubuntu:latest
 
 #update and install packages
 RUN apt-get update
-RUN apt install curl -y
+RUN apt-get install  curl apt-transport-https ca-certificates software-properties-common 
 
 #install docker-compose
 RUN curl -L "https://github.com/docker/compose/releases/download/1.26.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 RUN chmod +x /usr/local/bin/docker-compose
 RUN docker-compose --version
-RUN docker --version
 
 #add directory to "vitual machine"
 ADD ./webapp/docker-compose.yml /tmp/docker-compose.yml
