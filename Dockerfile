@@ -10,10 +10,10 @@ RUN chmod +x /usr/local/bin/docker-compose
 RUN docker-compose --version
 
 #add directory to "vitual machine"
-ADD ./herokuWordpress/docker-compose.yml /tmp/docker-compose.yml
+ADD ./webapp/docker-compose.yml /tmp/docker-compose.yml
 
-ADD ./herokuWordpress /opt/herokuWordpress
-WORKDIR /opt/herokuWordpress
+ADD ./webapp /opt/webapp
+WORKDIR /opt/webapp
 
 #run docker-compose
 RUN docker-compose up -d
