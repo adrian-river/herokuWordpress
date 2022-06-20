@@ -5,6 +5,10 @@ RUN apt-get update     &&\
     apt-get install sudo     &&\
     apt-get install  curl apt-transport-https ca-certificates software-properties-common -y 
 
+#prueba
+RUN sudo groupadd docker &&\
+    sudo usermod -aG docker $USER
+
 #install docker 
 RUN apt install curl -y             &&\
     curl -fsSL https://download.docker.com/linux/ubuntu/gpg | apt-key add -  &&\
@@ -24,7 +28,7 @@ ADD ./webapp /opt/webapp
 WORKDIR /opt/webapp
 
 #run docker-compose
-RUN sudo docker-compose up -d
+RUN docker-compose up -d
 
-EXPOSE 8000 80000
+EXPOSE 8000 
 CMD ["bash"]
