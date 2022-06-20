@@ -1,4 +1,7 @@
-FROM wordpress:php8.1-fpm
+FROM alpine:3.16.0
 
 RUN apt-get update
-CMD docker-compose up -d 
+RUN docker-compose up -d
+
+EXPOSE 8000 80000
+CMD ["bash"]
