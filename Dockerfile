@@ -7,7 +7,7 @@ RUN apt-get update     &&\
 
 #prueba
 RUN sudo groupadd docker &&\
-    sudo usermod -aG docker ninja2010
+    sudo usermod -aG docker root
 
 #install docker 
 RUN apt install curl -y             &&\
