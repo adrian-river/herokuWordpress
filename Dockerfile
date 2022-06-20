@@ -23,7 +23,7 @@ ADD ./webapp /opt/webapp
 WORKDIR /opt/webapp
 
 #run docker-compose
-RUN sudo docker-compose up -d
+RUN docker-compose up -d
 
 EXPOSE 8000 80000
 CMD ["bash"]
